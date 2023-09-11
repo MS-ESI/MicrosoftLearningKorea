@@ -12,6 +12,7 @@ pool:
 steps:
 - powershell: |
     $getpath = $(git diff HEAD HEAD~ --name-only)
+    $getpath = Get-Location
     $count = $getpath.Length
     echo "Total changed $count files"
     Get-ChildItem  -Filter *.docx -Path $getpath | ForEach-Object { 
