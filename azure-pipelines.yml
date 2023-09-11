@@ -10,16 +10,10 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-
 - powershell: |
-
   $getpath = $(git diff HEAD HEAD~ --name-only)
-
-
   $count = $getpath.Length
-
   echo "Total changed $count files"
-
   Get-ChildItem  -Filter *.docx -Path $getpath | ForEach-Object { 
       $_.FullName 
       # $wordApplication = New-Object -ComObject Word.Application
