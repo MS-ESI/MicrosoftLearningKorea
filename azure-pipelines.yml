@@ -15,7 +15,7 @@ steps:
     $getpath = Get-Location
     $count = $getpath.Length
     echo "Total changed $count files"
-    echo Get-Location
+    Get-Location
     Get-ChildItem  -Filter *.docx -Path $getpath | ForEach-Object { 
         $_.FullName 
         # $wordApplication = New-Object -ComObject Word.Application
